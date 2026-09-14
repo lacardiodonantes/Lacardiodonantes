@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101b86">
+  <meta name="description" content="Elige el monto que deseas donar.">
+  <title>Donación | Elige tu aporte</title>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-30QGR4ZMD5"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js',new Date());
+    gtag('config','G-30QGR4ZMD5');
+  </script>
+</head>
+<body>
+  <main class="portal">
+    <div class="top-line"></div>
+
+    <section class="card" id="donar">
+      <div class="stepper" aria-label="Paso 1 de 3">
+        <div class="step active">1</div><span></span><div class="step">2</div><span></span><div class="step">3</div>
+      </div>
+
+      <p class="kicker">DONACIÓN</p>
+      <h1>Elige cuánto quieres donar</h1>
+      <p class="subtitle">Selecciona el monto de tu aporte para continuar.</p>
+
+      <div class="amount-grid">
+        <a class="amount" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657" data-value="$100.000" target="_blank" rel="noopener">
+          <strong>$100.000</strong><span>DONAR <b>→</b></span>
+        </a>
+        <a class="amount" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a" data-value="$200.000" target="_blank" rel="noopener">
+          <strong>$200.000</strong><span>DONAR <b>→</b></span>
+        </a>
+        <a class="amount" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530" data-value="$500.000" target="_blank" rel="noopener">
+          <strong>$500.000</strong><span>DONAR <b>→</b></span>
+        </a>
+        <a class="amount featured" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a" data-value="$1.000.000" target="_blank" rel="noopener">
+          <em>RECOMENDADO</em><strong>$1.000.000</strong><span>DONAR <b>→</b></span>
+        </a>
+        <a class="amount" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b" data-value="$2.000.000" target="_blank" rel="noopener">
+          <strong>$2.000.000</strong><span>DONAR <b>→</b></span>
+        </a>
+        <a class="amount" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9" data-value="$4.000.000" target="_blank" rel="noopener">
+          <strong>$4.000.000</strong><span>DONAR <b>→</b></span>
+        </a>
+        <button class="amount other" type="button" id="otherAmountBtn" data-value="$0">
+          <strong>$0</strong><span>AQUÍ PUEDE INGRESAR CUALQUIER MONTO <b>→</b></span>
+        </button>
+      </div>
+
+      <section class="request-panel" id="requestPanel" hidden aria-labelledby="requestTitle">
+        <div class="request-head">
+          <div>
+            <p class="kicker">OTRA CANTIDAD</p>
+            <h2 id="requestTitle">Solicita tu enlace de pago</h2>
+            <p>Completa tus datos y te enviaremos el enlace correspondiente.</p>
+          </div>
+          <button type="button" class="close-request" id="closeRequest" aria-label="Cerrar">×</button>
+        </div>
+        <form id="requestForm" action="https://formsubmit.co/caudofun@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Solicitud de enlace de donación">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://lacardi0.github.io/Donaciones-lacardioinfantil/">
+          <div class="form-grid">
+            <label>Nombre completo<input required type="text" name="nombre" autocomplete="name"></label>
+            <label>Celular<input required type="tel" name="celular" autocomplete="tel"></label>
+            <label>Correo electrónico<input required type="email" name="correo" autocomplete="email"></label>
+            <label>Valor que desea donar<input required type="text" name="valor" inputmode="numeric" placeholder="$ 0"></label>
+          </div>
+          <label class="consent"><input required type="checkbox" name="autorizacion_datos" value="Sí"> <span>Autorizo el tratamiento de mis datos para gestionar esta solicitud de donación.</span></label>
+          <p class="privacy-note">Protección de datos: habeasdata@fundacioncardioinfantil.com.co</p>
+          <button class="send-request" type="submit">SOLICITAR ENLACE <b>→</b></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <p class="secure">Al seleccionar un monto serás dirigido al medio de pago correspondiente.</p>
+    </section>
+
+    <footer>
+      <span>Donaciones</span>
+      <span>Protección de datos · Habeas Data</span>
+      <span>© 2026 · Todos los derechos reservados.</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

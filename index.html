@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>Portal de donaciones</title>
   <link rel="stylesheet" href="style.css">
@@ -10,60 +10,93 @@
 <body>
   <main class="portal">
     <header class="top">
-      <img class="logo" src="assets/logo-lacardio.png" alt="LaCardio">
+      <img class="logo" src="logo-lacardio.png" alt="LaCardio">
     </header>
 
     <section class="access" id="access">
       <div class="steps">
-        <span class="step active">1</span><span class="line"></span>
-        <span class="step">2</span><span class="line"></span>
+        <span class="step active">1</span>
+        <span class="line"></span>
+        <span class="step">2</span>
+        <span class="line"></span>
         <span class="step">3</span>
       </div>
 
-      <h1>Quiero ayudar con mi aportación</h1>
-      <p class="subtitle">Elige cuánto quieres donar</p>
+      <div class="intro">
+        <span class="eyebrow">DONACIÓN</span>
+        <h1>Quiero ayudar con mi aportación</h1>
+        <p class="subtitle">Elige cuánto quieres donar</p>
+      </div>
 
       <div class="toggle">
-        <button class="toggle-btn active" type="button">Puntual</button>
-        <button class="toggle-btn" type="button">Periódica</button>
+        <button class="toggle-btn active" id="puntualBtn" type="button">Puntual</button>
+        <button class="toggle-btn" id="periodicaBtn" type="button">Periódica</button>
       </div>
 
       <div class="amounts">
-        <a class="amount" data-value="$100.000" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657">$100.000</a>
-        <a class="amount" data-value="$200.000" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a">$200.000</a>
-        <a class="amount featured" data-value="$500.000" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530">$500.000</a>
-        <a class="amount" data-value="$1.000.000" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a">$1.000.000</a>
-        <a class="amount" data-value="$2.000.000" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b">$2.000.000</a>
-        <a class="amount" data-value="$4.000.000" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9">$4.000.000</a>
+        <a class="amount" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657">
+          <span>$100.000</span>
+        </a>
+        <a class="amount" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a">
+          <span>$200.000</span>
+        </a>
+        <a class="amount" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530">
+          <span>$500.000</span>
+        </a>
+        <a class="amount" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a">
+          <span>$1.000.000</span>
+        </a>
+        <a class="amount" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b">
+          <span>$2.000.000</span>
+        </a>
+        <a class="amount" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9">
+          <span>$4.000.000</span>
+        </a>
         <button class="amount custom" id="customAmount" type="button">
           <strong>Otro monto</strong>
           <small>Aquí puede ingresar cualquier monto</small>
         </button>
       </div>
 
-      <p class="notice">Seleccione un monto para continuar.</p>
+      <div class="security">
+        <div class="security-icon">✓</div>
+        <div>
+          <strong>Tu donación es segura</strong>
+          <p>Serás dirigido al enlace de pago correspondiente al monto seleccionado.</p>
+        </div>
+      </div>
+
+      <p class="notice">Selecciona un monto para continuar.</p>
     </section>
   </main>
 
   <div class="modal hidden" id="customModal" aria-hidden="true">
     <div class="modal-card">
       <button class="close" id="closeModal" type="button" aria-label="Cerrar">×</button>
+      <span class="eyebrow">OTRO MONTO</span>
       <h2>Solicitar enlace de pago</h2>
       <p>Déjanos tus datos y te enviaremos un enlace para el monto que deseas donar.</p>
+
       <form action="https://formsubmit.co/caudofun@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Solicitud de enlace de pago">
         <input type="hidden" name="_captcha" value="false">
+
         <input type="text" name="nombre" placeholder="Nombre completo" required>
         <input type="tel" name="celular" placeholder="Celular" required>
         <input type="email" name="correo" placeholder="Correo electrónico" required>
         <input type="text" name="valor" placeholder="Valor que desea donar" required>
+
         <label class="consent">
-          <input type="checkbox" required>
+          <input type="checkbox" name="autorizacion" required>
           <span>Acepto el tratamiento de mis datos para gestionar esta solicitud.</span>
         </label>
+
         <button class="submit" type="submit">Enviar solicitud</button>
       </form>
-      <small>Protección de datos: habeasdata@fundacioncardioinfantil.com.co</small>
+
+      <small class="privacy">
+        Protección de datos: habeasdata@fundacioncardioinfantil.com.co
+      </small>
     </div>
   </div>
 
@@ -75,70 +108,6 @@
     </div>
   </section>
 
-<script>
-(function () {
-  "use strict";
-
-  const params = new URLSearchParams(window.location.search);
-  const token = params.get("access");
-  const access = document.getElementById("access");
-  const blocked = document.getElementById("blocked");
-
-  function deny(title, text) {
-    access.classList.add("hidden");
-    blocked.classList.remove("hidden");
-    document.getElementById("blockedTitle").textContent = title;
-    document.getElementById("blockedText").textContent = text;
-  }
-
-  if (!token || !/^[A-Za-z0-9_-]{6,128}$/.test(token)) {
-    deny("Enlace no válido", "Debes ingresar mediante el enlace que recibiste.");
-    return;
-  }
-
-  const key = "access_used_" + token;
-  let used = false;
-
-  try {
-    used = window.localStorage.getItem(key) === "1";
-
-    if (!used) {
-      window.localStorage.setItem(key, "1");
-    }
-  } catch (error) {
-    // Si el navegador no permite almacenamiento, la sesión continúa.
-  }
-
-  if (used) {
-    deny("Este enlace ya fue utilizado", "Por seguridad, este acceso solo puede utilizarse una vez.");
-    return;
-  }
-
-  try {
-    window.history.replaceState({}, document.title, window.location.pathname);
-  } catch (error) {}
-
-  const modal = document.getElementById("customModal");
-  const custom = document.getElementById("customAmount");
-  const close = document.getElementById("closeModal");
-
-  custom.addEventListener("click", function () {
-    modal.classList.remove("hidden");
-    modal.setAttribute("aria-hidden", "false");
-  });
-
-  close.addEventListener("click", function () {
-    modal.classList.add("hidden");
-    modal.setAttribute("aria-hidden", "true");
-  });
-
-  modal.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.classList.add("hidden");
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
-})();
-</script>
+  <script src="script.js"></script>
 </body>
 </html>

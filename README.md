@@ -1,34 +1,20 @@
-# Portal de donaciones — acceso mediante enlace
+# Portal de donaciones
 
-Esta versión está preparada para GitHub Pages.
-
-## Enlace de acceso
-
-Usa un enlace con el formato:
-
-https://DOMINIO/?access=CODIGO
-
-Ejemplo:
-
-https://DOMINIO/?access=ABC123XYZ
-
-Cada persona debe recibir un código diferente.
-
-## Comportamiento
-
-- Sin código: no se muestra el portal.
-- Primera apertura del código en un navegador: se muestra el portal.
-- Segunda apertura del mismo código en ese navegador: aparece el bloqueo.
-- El código se elimina de la barra del navegador después de abrir.
-
-## Limitación de GitHub Pages
-
-Esta versión utiliza localStorage porque GitHub Pages es estático. Por ello no puede garantizar un bloqueo frente a incógnito, otro navegador, otro dispositivo o borrado de los datos del sitio.
-
-Para que el mismo enlace quede bloqueado en cualquier navegador/dispositivo se necesita un servicio de servidor.
-
-## Archivos
+Archivos principales:
 
 - index.html
 - style.css
-- assets/logo-lacardio.png
+- script.js
+- logo-lacardio.png
+
+El logo se encuentra directamente en la carpeta principal.
+
+## Acceso
+
+La página utiliza un código en el enlace con el formato:
+
+?access=CODIGO
+
+La versión de GitHub Pages registra el uso en el almacenamiento local del navegador. Esto permite bloquear el mismo código cuando se vuelve a abrir en ese mismo navegador.
+
+GitHub Pages por sí solo no puede garantizar un bloqueo de un solo uso entre diferentes navegadores, incógnito, dispositivos o direcciones IP. Para eso se requiere un backend.

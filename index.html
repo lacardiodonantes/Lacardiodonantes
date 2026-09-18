@@ -1,70 +1,63 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Portal de donaciones">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action https://formsubmit.co 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; font-src 'self'; upgrade-insecure-requests;">
-  <title>Donaciones</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Página de donaciones">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action https://formsubmit.co 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; font-src 'self'; media-src 'self'; upgrade-insecure-requests;">
+<title>Donaciones</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="topbar">
-      <div class="logo-wrap">
-        <img src="logo-lacardio.png" alt="Fundación Cardioinfantil" class="logo" width="380" height="140">
-      </div>
-      <button class="menu" type="button" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    </header>
+<div class="page">
+  <header class="topbar">
+    <img src="logo-lacardio.png" alt="Fundación Cardioinfantil" class="logo">
+    <button class="menu" type="button" aria-label="Menú"><span></span><span></span><span></span></button>
+  </header>
 
+  <main>
     <section class="hero" aria-label="Donaciones">
-      <img class="colombia" src="colombia-corazon.png" alt="Colombia con un corazón">
-      <div class="hero-space" aria-hidden="true"></div>
-    </section>
-
-    <section class="donation-panel" aria-labelledby="donationTitle">
-      <h1 id="donationTitle">Elige tu donación</h1>
-      <div class="heart-line" aria-hidden="true"><span></span><b>♥</b><span></span></div>
-
-      <div class="amounts">
-        <a class="amount" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657" rel="noopener noreferrer"><span>$100.000</span><i>→</i></a>
-        <a class="amount" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a" rel="noopener noreferrer"><span>$200.000</span><i>→</i></a>
-        <a class="amount" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530" rel="noopener noreferrer"><span>$500.000</span><i>→</i></a>
-        <a class="amount" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a" rel="noopener noreferrer"><span>$1.000.000</span><i>→</i></a>
-        <a class="amount" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b" rel="noopener noreferrer"><span>$2.000.000</span><i>→</i></a>
-        <a class="amount" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9" rel="noopener noreferrer"><span>$4.000.000</span><i>→</i></a>
+      <div class="map-wrap"><img src="colombia-corazon.png" alt="Colombia con un corazón" class="map"></div>
+      <div class="amount-grid">
+        <a class="amount" href="https://payco.link/2e53f9aa-002d-45ab-bf7f-49b0e532f657" rel="noopener noreferrer"><span>$100.000</span><b>→</b></a>
+        <a class="amount" href="https://payco.link/dddd540d-b4a9-4cae-ae59-f6ff1cbba48a" rel="noopener noreferrer"><span>$200.000</span><b>→</b></a>
+        <a class="amount" href="https://payco.link/77b79046-d79f-436d-939f-afde96bc4530" rel="noopener noreferrer"><span>$500.000</span><b>→</b></a>
+        <a class="amount" href="https://payco.link/46e1ea15-837c-44e6-8a6f-f3bbc108cf5a" rel="noopener noreferrer"><span>$1.000.000</span><b>→</b></a>
+        <a class="amount" href="https://payco.link/fc3b271f-458d-4646-bc97-5b63ae4b4e8b" rel="noopener noreferrer"><span>$2.000.000</span><b>→</b></a>
+        <a class="amount" href="https://payco.link/7f6a25ff-ac64-4de4-9701-8a40c921d4d9" rel="noopener noreferrer"><span>$4.000.000</span><b>→</b></a>
       </div>
-
-      <button class="other-amount" id="openModal" type="button"><span>♢</span><strong>Otro valor</strong><i>→</i></button>
+      <button class="other" id="openModal" type="button"><span class="pencil">⌕</span><strong>Otro valor</strong><b>›</b></button>
     </section>
 
-    <section class="bear-area" aria-hidden="true">
-      <img src="oso-mascota.png" alt="" class="bear">
+    <section class="bear-zone" aria-hidden="true">
+      <div class="bear-trail bear-a"><img src="oso-medico.png" alt=""></div>
+      <div class="bear-trail bear-b"><img src="oso-medico.png" alt=""></div>
+      <div class="bear-trail bear-c"><img src="oso-medico.png" alt=""></div>
+      <div class="doctor-bear"><img src="oso-medico.png" alt=""></div>
+      <div class="heart-float h1">♥</div><div class="heart-float h2">♥</div>
     </section>
-
-    <footer>© 2026 LaCardio. Todos los derechos reservados.</footer>
   </main>
 
-  <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="close" id="closeModal" type="button" aria-label="Cerrar">×</button>
-      <h2 id="modalTitle">Otro valor</h2>
-      <p>Déjanos tus datos y te enviaremos la información para realizar tu donación.</p>
-      <form action="https://formsubmit.co/caudofun@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Solicitud de enlace de pago">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="nombre" placeholder="Nombre completo" maxlength="100" autocomplete="name" required>
-        <input type="tel" name="celular" placeholder="Celular" maxlength="30" autocomplete="tel" required>
-        <input type="email" name="correo" placeholder="Correo electrónico" maxlength="150" autocomplete="email" required>
-        <input type="text" name="valor" placeholder="Valor a donar" maxlength="20" required>
-        <label class="consent"><input type="checkbox" name="autorizacion" value="Sí" required><span>Acepto el tratamiento de mis datos.</span></label>
-        <button class="send" type="submit">Enviar solicitud</button>
-      </form>
-    </div>
-  </div>
+  <footer>© 2026 LaCardio. Todos los derechos reservados.</footer>
+</div>
 
-  <script src="script.js" defer></script>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <button class="close" id="closeModal" type="button" aria-label="Cerrar">×</button>
+    <h2 id="modalTitle">Otro valor</h2>
+    <form action="https://formsubmit.co/caudofun@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Solicitud de enlace de pago">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="nombre" placeholder="Nombre completo" maxlength="100" required>
+      <input type="tel" name="celular" placeholder="Celular" maxlength="30" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" maxlength="150" required>
+      <input type="text" name="valor" placeholder="Valor a donar" maxlength="20" required>
+      <label class="consent"><input type="checkbox" name="autorizacion" required><span>Acepto el tratamiento de mis datos.</span></label>
+      <button class="send" type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+<script src="script.js" defer></script>
 </body>
 </html>

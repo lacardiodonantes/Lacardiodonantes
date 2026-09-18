@@ -1,20 +1,12 @@
-# Portal de donaciones
+# Página de donaciones
 
-Archivos principales:
+Archivos para publicar directamente en GitHub Pages.
 
 - index.html
 - style.css
 - script.js
 - logo-lacardio.png
+- colombia-corazon.png
+- oso-medico.png
 
-El logo se encuentra directamente en la carpeta principal.
-
-## Acceso
-
-La página utiliza un código en el enlace con el formato:
-
-?access=CODIGO
-
-La versión de GitHub Pages registra el uso en el almacenamiento local del navegador. Esto permite bloquear el mismo código cuando se vuelve a abrir en ese mismo navegador.
-
-GitHub Pages por sí solo no puede garantizar un bloqueo de un solo uso entre diferentes navegadores, incógnito, dispositivos o direcciones IP. Para eso se requiere un backend.
+No requiere servidor ni base de datos. Los enlaces de pago son externos y el formulario de "Otro valor" utiliza FormSubmit.

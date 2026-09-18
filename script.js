@@ -2,9 +2,26 @@
   const modal = document.getElementById('modal');
   const open = document.getElementById('openModal');
   const close = document.getElementById('closeModal');
-  const toggle = (show) => modal.classList.toggle('hidden', !show);
-  open.addEventListener('click', () => toggle(true));
-  close.addEventListener('click', () => toggle(false));
-  modal.addEventListener('click', e => { if (e.target === modal) toggle(false); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+  const focusDonate = document.getElementById('focusDonate');
+
+  const setModal = (visible) => {
+    modal.classList.toggle('hidden', !visible);
+    document.body.style.overflow = visible ? 'hidden' : '';
+    if (visible) {
+      setTimeout(() => modal.querySelector('input')?.focus(), 40);
+    }
+  };
+
+  open?.addEventListener('click', () => setModal(true));
+  close?.addEventListener('click', () => setModal(false));
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) setModal(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setModal(false);
+  });
+
+  focusDonate?.addEventListener('click', () => {
+    document.getElementById('donar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 })();
